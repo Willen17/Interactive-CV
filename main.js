@@ -4,11 +4,7 @@ let xAxis = 0;
 let yAxis = 0;
 
 function move(e){
-    if(e.keyCode === 40)
-    {
-        yAxis += 5;
-        box.style.marginTop = (parseInt (yAxis) + yAxis) + 'px';
-    }
+    
     if(e.keyCode === 39)
     {
         xAxis += 5;
@@ -21,12 +17,10 @@ function move(e){
     }
     if(e.keyCode === 38)
     {
-        yAxis -= 5;
-        box.style.marginTop = (parseInt (yAxis) + yAxis) + 'px';
+        yAxis -= 30;
+        box.style.marginTop = (parseInt (yAxis) + yAxis) + 'px';    
     }
-    if(yAxis>100) {
-        yAxis = 99;
-    }
+
     if(yAxis<-175) {
         yAxis = -174;
     }
