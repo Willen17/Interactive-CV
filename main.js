@@ -1,27 +1,40 @@
 const box = document.querySelector('div');
 
-let moveBy = 0;
+let xAxis = 0;
+let yAxis = 0;
 
 function move(e){
     if(e.keyCode === 40)
     {
-        moveBy += 5;
-        box.style.marginTop = (parseInt (moveBy) + moveBy) + 'px';
+        yAxis += 5;
+        box.style.marginTop = (parseInt (yAxis) + yAxis) + 'px';
     }
     if(e.keyCode === 39)
     {
-        moveBy += 5;
-        box.style.marginLeft = (parseInt (moveBy) + moveBy) + 'px';
+        xAxis += 5;
+        box.style.marginLeft = (parseInt (xAxis) + xAxis) + 'px';
     }
     if(e.keyCode === 37)
     {
-        moveBy += -5;
-        box.style.marginLeft = (parseInt (moveBy) + moveBy) + 'px';
+        xAxis += -5;
+        box.style.marginLeft = (parseInt (xAxis) + xAxis) + 'px';
     }
     if(e.keyCode === 38)
     {
-        moveBy -= 5;
-        box.style.marginTop = (parseInt (moveBy) + moveBy) + 'px';
+        yAxis -= 5;
+        box.style.marginTop = (parseInt (yAxis) + yAxis) + 'px';
+    }
+    if(yAxis>100) {
+        yAxis = 99;
+    }
+    if(yAxis<-175) {
+        yAxis = -174;
+    }
+    if(xAxis<-380) {
+        xAxis = -379;
+    }
+    if(xAxis>355) {
+        xAxis = 354;
     }
 }
 
