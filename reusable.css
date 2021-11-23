@@ -1,0 +1,13 @@
+/* Reusable classes */
+
+.flex {display: flex;}
+
+.column {flex-direction: column;}
+
+.justify-center {justify-content: center;}
+
+.align-center {align-items: center;}
+
+.absolute {position: absolute;}
+
+.relative {position: relative;}

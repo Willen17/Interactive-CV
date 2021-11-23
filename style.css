@@ -1,0 +1,14 @@
+/* Element specific classes */
+
+body {margin: 0;
+background-color: aqua;
+height: 100vh;}
+
+div {
+    background-color:coral;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+}
