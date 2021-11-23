@@ -1,4 +1,4 @@
-const box = document.querySelector('div');
+const box = document.getElementById('ball');
 
 let xAxis = 0;
 let yAxis = 0;
@@ -30,13 +30,13 @@ function move(e){
     if(yAxis<-175) {
         yAxis = -174;
     }
-    if(xAxis<-380) {
-        xAxis = -379;
+    if(xAxis<4) {
+        xAxis = 5;
     }
-    if(xAxis>355) {
-        xAxis = 354;
+    if(xAxis>728) {
+        xAxis = 727;
     }
 }
 
 
-document.onkeydown = move;
+ document.onkeydown = move;
