@@ -1,0 +1,10 @@
+* {box-sizing: border-box;}
+
+body {margin: 0;}
+
+#canvas1 {
+    position: absolute;
+    border: 0.5rem solid blue;
+    height: 100%;
+    width: 100%;
+}
