@@ -1,36 +1,45 @@
-let img = new Image();
-img.src = './assets/sprite-sheet.png'
-img.onload = function() {
-    window.requestAnimationFrame(gameLoop);
-}
-
+//Getting canvas element and getContext to be able to draw on canvas. 
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 const canvasHeight = canvas.height = window.innerHeight;
 const canvasWidth = canvas.width = window.innerWidth;
 
-const SCALE = 2; // Scale down the character. To scale up, change the / to *.
+
+const SCALE = 2; // Scale down the character. To scale up, change the / to * (in SCALEDCharacters below).
 const characterWIDTH = 307; // The characters width on the sprite sheet.
 const characterHEIGHT = 408; // The characters height on the sprite sheet.
 const SCALEDCharacterWIDTH = characterWIDTH / SCALE; // The characters width after scaling.
 const SCALEDCharacterHEIGHT = characterHEIGHT / SCALE; // The characters height after scaling.
-
-function drawFrame(frameX, frameY, canvasX, canvasY) {
-    ctx.drawImage(img,
-         frameX * characterWIDTH, frameY * characterHEIGHT, characterWIDTH, characterHEIGHT,
-          canvasX, canvasY, SCALEDCharacterWIDTH, SCALEDCharacterHEIGHT);
-}
-
-const cycleLoop = [0, 1, 2, 3];
-let currentLoopIndex = 0;
-let frameCount = 0; // To keep track on what frame we are on
-
+const cycleLoop = [0, 1, 2, 3]; // Represents each frame of the sprite sheet. 0=the first frame in the animation, 3= the last frame.
 // Variables for the direction the character ie facing, default right.
 const facingRight = 0;
 const facingLeft = 1;
-let currentDirection = facingRight;
+//Frame limit sets how often the animation will update
+const frameLimit = 9;
+//Movement speed sets how many pixels the character will move per click.
+const movementSpeed = 3;
 
-let keyPresses = {};
+let keyPresses = {}; //Tracks what key the user presses, empty by default.
+let currentDirection = facingRight; //Displays the current direction the character is facing, by default right.
+let currentLoopIndex = 0; //Used together with cycleLoop, sets which frame to use in the sprite sheet.
+let frameCount = 0; // To keep track on what frame we are on.
+let positionX = 0;  
+let positionY = canvasHeight - 300; // Sets the characters Y axis.
+let img = new Image(); // Creates the image.
+
+function loadImage () {
+    img.src = './assets/sprite-sheet.png';
+    img.onload = function() {
+        window.requestAnimationFrame(gameLoop);
+    }
+
+}
+
+window.onload = main();
+
+function main() {
+    loadImage();
+}
 
 window.addEventListener('keydown', keyDownListener, false);
 function keyDownListener(event) {
@@ -42,15 +51,14 @@ function keyUpListener(event) {
     keyPresses[event.key] = false;
 }
 
-const movementSpeed = 3;
-let positionX = 0;
-let positionY = 0;
-
-const frameLimit = 9;
+function drawFrame(frameX, frameY, canvasX, canvasY) {
+    ctx.drawImage(img,
+         frameX * characterWIDTH, frameY * characterHEIGHT, characterWIDTH, characterHEIGHT,
+          canvasX, canvasY, SCALEDCharacterWIDTH, SCALEDCharacterHEIGHT);
+}
 
 
 function gameLoop() {
-    // Future animation code goes here
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     let hasMoved = false;
@@ -75,26 +83,11 @@ function gameLoop() {
             }
         }
     }
+    
+    if (!hasMoved) {
+        currentLoopIndex = 0;
+    }
 
     drawFrame(cycleLoop[currentLoopIndex], currentDirection, positionX, positionY);
-
     window.requestAnimationFrame(gameLoop);   
 }
-
-
-// // Draws different parts of the image on the canvas.
-// function step() {
-//     frameCount++; // Adds a fram each loop
-//     if (frameCount < 15) { //Standard for an object to be drawn is 60fps, thats way too fast. With this it only steps every 15 frames; 4 times a second. 
-//         window.requestAnimationFrame(step);
-//         return;
-//     }
-//     frameCount = 0;
-//     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-//     drawFrame(cycleLoop[currentLoopIndex], 0, 0, 0,);
-//     currentLoopIndex++;
-//     if (currentLoopIndex >= cycleLoop.length) {
-//         currentLoopIndex = 0;
-//     }
-//     window.requestAnimationFrame(step);
-// }
