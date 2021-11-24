@@ -24,14 +24,30 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 
 function init() {
     // Future animation code goes here
-
+    window.requestAnimationFrame(step);
     // Draws different parts of the image on the canvas.
-    drawFrame(0, 0, 0, 0);
-    drawFrame(1, 0, scaledCharacterWidth, 0);
-    drawFrame(2, 0, scaledCharacterWidth * 2, 0);
-    drawFrame(3, 0, scaledCharacterWidth * 3, 0);
-    // ctx.drawImage(img, 0, 0, characterWidth, characterHeight, 0, 0, scaledCharacterWidth, scaledCharacterHeight);
-    // ctx.drawImage(img, characterWidth, 0, characterWidth, characterHeight, scaledCharacterWidth, 0, scaledCharacterWidth, scaledCharacterHeight);
-    // ctx.drawImage(img, characterWidth * 2, 0, characterWidth, characterHeight, scaledCharacterWidth * 2, 0, scaledCharacterWidth, scaledCharacterHeight);
-    // ctx.drawImage(img, characterWidth * 3, 0, characterWidth, characterHeight, scaledCharacterWidth * 3, 0, scaledCharacterWidth, scaledCharacterHeight);
+    // drawFrame(0, 0, 0, 0);
+    // drawFrame(1, 0, scaledCharacterWidth, 0);
+    // drawFrame(2, 0, scaledCharacterWidth * 2, 0);
+    // drawFrame(3, 0, scaledCharacterWidth * 3, 0);
+}
+
+const cycleLoop = [0, 1, 2, 3];
+let currentLoopIndex = 0;
+let frameCount = 0; // To keep track on what frame we are on
+
+function step() {
+    frameCount++; // Adds a fram each loop
+    if (frameCount < 15) { //Standard for an object to be drawn is 60fps, thats way too fast. With this it only steps every 15 frames; 4 times a second. 
+        window.requestAnimationFrame(step);
+        return;
+    }
+    frameCount = 0;
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    drawFrame(cycleLoop[currentLoopIndex], 0, 0, 0,);
+    currentLoopIndex++;
+    if (currentLoopIndex >= cycleLoop.length) {
+        currentLoopIndex = 0;
+    }
+    window.requestAnimationFrame(step);
 }
