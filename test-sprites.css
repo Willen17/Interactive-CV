@@ -20,9 +20,9 @@ div {
 }
 
 main {
+    overflow: hidden;
     position:absolute;
-    display: flex;
-    justify-content: center;
+    align-items: center;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -31,6 +31,15 @@ main {
     background-position: center;
     background-size: cover;
     background-repeat: repeat-x;
-    
-    
+}
+
+#img1 {
+    position: absolute;
+    top: 30%;
+    left: 100%;
+}
+#img2 {
+    position: absolute;
+    top: 30%;
+    left: 150%;
 }

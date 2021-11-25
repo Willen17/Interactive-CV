@@ -4,7 +4,6 @@ const ctx = canvas.getContext('2d');
 const canvasHeight = canvas.height = window.innerHeight;
 const canvasWidth = canvas.width = window.innerWidth;
 
-
 const SCALE = 2; // Scale down the character. To scale up, change the / to * (in SCALEDCharacters below).
 const characterWIDTH = 307; // The characters width on the sprite sheet.
 const characterHEIGHT = 408; // The characters height on the sprite sheet.
@@ -19,7 +18,6 @@ const frameLimit = 9;
 //Movement speed sets how many pixels the character will move per click.
 const movementSpeed = 3;
 
-const background = document.querySelector('main');
 
 let keyPresses = {}; //Tracks what key the user presses, empty by default.
 let currentDirection = facingRight; //Displays the current direction the character is facing, by default right.
@@ -29,7 +27,11 @@ let positionX = canvasWidth/3;  // Sets the characters X axis.
 let positionY = canvasHeight - 300; // Sets the characters Y axis.
 let img = new Image(); // Creates the image.
 
-let backgroundPosX = 0; // Position of the backgrounds X axis.
+const minionOne = document.getElementById('img1');
+const minioneTwo = document.getElementById('img2');
+let moveMinion = 100;
+let moveMinionTwo = 150;
+
 
 function loadImage () {
     img.src = './assets/sprite-sheet.png';
@@ -67,33 +69,29 @@ function gameLoop() {
     let hasMoved = false;
 
     if (keyPresses.ArrowRight) {
-        if (canvasWidth > 500) {
-            background.style.backgroundPosition = -backgroundPosX * 4 + '%';
-            backgroundPosX--; 
-            currentDirection = facingRight;
-            hasMoved = true;
-        } else {
-        background.style.backgroundPosition = -backgroundPosX + '%';
-        backgroundPosX--;
         // positionX += movementSpeed;
         currentDirection = facingRight;
         hasMoved = true;
-        }
+
+        moveMinion -= 0.3;
+        moveMinionTwo -= 0.3;
+        
+        minionOne.style.left = moveMinion + '%';
+        minioneTwo.style.left = moveMinionTwo + '%';
+
     } else if (keyPresses.ArrowLeft) {
-        if (canvasWidth > 500) {
-        background.style.backgroundPosition = -backgroundPosX * 4 + '%';
-        backgroundPosX++;
         // positionX -= movementSpeed;
         currentDirection = facingLeft;
         hasMoved = true;
-    } else {
-            background.style.backgroundPosition = -backgroundPosX + '%';
-        backgroundPosX++;
-        // positionX -= movementSpeed;
-        currentDirection = facingLeft;
-        hasMoved = true;
-        }
+
+        moveMinion += 0.3;
+        moveMinionTwo += 0.3;
+
+        minionOne.style.left = moveMinion + '%'
+        minioneTwo.style.left = moveMinionTwo + '%';
+
     }
+
 
     if (hasMoved) {
         frameCount++;
