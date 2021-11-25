@@ -19,13 +19,17 @@ const frameLimit = 9;
 //Movement speed sets how many pixels the character will move per click.
 const movementSpeed = 3;
 
+const background = document.querySelector('main');
+
 let keyPresses = {}; //Tracks what key the user presses, empty by default.
 let currentDirection = facingRight; //Displays the current direction the character is facing, by default right.
 let currentLoopIndex = 0; //Used together with cycleLoop, sets which frame to use in the sprite sheet.
 let frameCount = 0; // To keep track on what frame we are on.
-let positionX = 0;  
+let positionX = canvasWidth/3;  // Sets the characters X axis.
 let positionY = canvasHeight - 300; // Sets the characters Y axis.
 let img = new Image(); // Creates the image.
+
+let backgroundPosX = 0; // Position of the backgrounds X axis.
 
 function loadImage () {
     img.src = './assets/sprite-sheet.png';
@@ -57,18 +61,21 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
           canvasX, canvasY, SCALEDCharacterWIDTH, SCALEDCharacterHEIGHT);
 }
 
-
 function gameLoop() {
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     let hasMoved = false;
 
     if (keyPresses.ArrowRight) {
-        positionX += movementSpeed;
+        background.style.backgroundPosition = -backgroundPosX + '%';
+        backgroundPosX++;
+        // positionX += movementSpeed;
         currentDirection = facingRight;
         hasMoved = true;
     } else if (keyPresses.ArrowLeft) {
-        positionX -= movementSpeed;
+        background.style.backgroundPosition = backgroundPosX + '%';
+        backgroundPosX++;
+        // positionX -= movementSpeed;
         currentDirection = facingLeft;
         hasMoved = true;
     }
@@ -87,7 +94,7 @@ function gameLoop() {
     if (!hasMoved) {
         currentLoopIndex = 0;
     }
-
+    
     drawFrame(cycleLoop[currentLoopIndex], currentDirection, positionX, positionY);
     window.requestAnimationFrame(gameLoop);   
 }
