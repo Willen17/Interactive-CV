@@ -67,17 +67,32 @@ function gameLoop() {
     let hasMoved = false;
 
     if (keyPresses.ArrowRight) {
+        if (canvasWidth > 500) {
+            background.style.backgroundPosition = -backgroundPosX * 4 + '%';
+            backgroundPosX--; 
+            currentDirection = facingRight;
+            hasMoved = true;
+        } else {
         background.style.backgroundPosition = -backgroundPosX + '%';
-        backgroundPosX++;
+        backgroundPosX--;
         // positionX += movementSpeed;
         currentDirection = facingRight;
         hasMoved = true;
+        }
     } else if (keyPresses.ArrowLeft) {
-        background.style.backgroundPosition = -backgroundPosX + '%';
-        backgroundPosX--;
+        if (canvasWidth > 500) {
+        background.style.backgroundPosition = -backgroundPosX * 4 + '%';
+        backgroundPosX++;
         // positionX -= movementSpeed;
         currentDirection = facingLeft;
         hasMoved = true;
+    } else {
+            background.style.backgroundPosition = -backgroundPosX + '%';
+        backgroundPosX++;
+        // positionX -= movementSpeed;
+        currentDirection = facingLeft;
+        hasMoved = true;
+        }
     }
 
     if (hasMoved) {
