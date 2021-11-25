@@ -73,8 +73,8 @@ function gameLoop() {
         currentDirection = facingRight;
         hasMoved = true;
     } else if (keyPresses.ArrowLeft) {
-        background.style.backgroundPosition = backgroundPosX + '%';
-        backgroundPosX++;
+        background.style.backgroundPosition = -backgroundPosX + '%';
+        backgroundPosX--;
         // positionX -= movementSpeed;
         currentDirection = facingLeft;
         hasMoved = true;
