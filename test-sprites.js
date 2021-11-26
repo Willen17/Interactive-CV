@@ -70,6 +70,8 @@ function gameLoop() {
 
     if (keyPresses.ArrowRight) {
         // positionX += movementSpeed;
+        // x-= gameSpeed;
+        // x2-= gameSpeed;
         currentDirection = facingRight;
         hasMoved = true;
 
@@ -81,6 +83,8 @@ function gameLoop() {
 
     } else if (keyPresses.ArrowLeft) {
         // positionX -= movementSpeed;
+        // x+= gameSpeed;
+        // x2+= gameSpeed;
         currentDirection = facingLeft;
         hasMoved = true;
 

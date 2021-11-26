@@ -4,7 +4,6 @@ body {margin: 0; overflow: hidden;}
 
 #canvas1 {
     position: absolute;
-    border: 0.5rem solid blue;
     height: 100%;
     width: 100%;
     z-index: 10;
@@ -14,10 +13,9 @@ body {margin: 0; overflow: hidden;}
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rebeccapurple;
 }
 
-div {
+/* div {
     background-color: greenyellow;
     width: 100%;
     height: 120px;
@@ -26,7 +24,7 @@ div {
     left: 0;
     z-index: 9;
     
-}
+} */
 
 main {
     overflow: hidden;
