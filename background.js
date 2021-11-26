@@ -1,29 +1,10 @@
+const canvasTwo = document.getElementById('canvas2');
+const ctxTwo = canvasTwo.getContext('2d');
 
-const minionOne = document.getElementById('img1');
-const minioneTwo = document.getElementById('img2');
+const canvasTwoWidth = canvasTwo.width = window.innerWidth;
+const canvasTwoHeight = canvasTwo.height = window.innerHeight;
 
-let moveMinion = 10;
+let gameSpeed = 5;
 
-window.addEventListener('keydown', keyDownListener, false);
-function keyDownListener(event) {
-    keyPresses[event.key] = true;
-}
-
-window.addEventListener('keyup', keyUpListener, false);
-function keyUpListener(event) {
-    keyPresses[event.key] = false;
-}
-backgroundMove();
-
-function backgroundMove() {
-    if (keyPresses.ArrowRight) {
-        moveMinion++;
-        minionOne.style.left = moveMinion + 'px';
-        
-    } else if (keyPresses.ArrowLeft) {
-        moveMinion--;
-        minionOne.style.left = moveMinion + 'px'
-       
-    }
-   backgroundMove;
-}
+const backgroundLayerOne = new Image();
+backgroundLayerOne.src = './assets/forrest.jpg';
