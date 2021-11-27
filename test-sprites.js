@@ -31,6 +31,9 @@ const minionOne = document.getElementById('img1');
 const minioneTwo = document.getElementById('img2');
 let moveMinion = 100;
 let moveMinionTwo = 150;
+const threshold = -10; 
+const startMinionValue = 150;
+
 
 
 function loadImage () {
@@ -80,6 +83,7 @@ function gameLoop() {
         
         minionOne.style.left = moveMinion + '%';
         minioneTwo.style.left = moveMinionTwo + '%';
+        
 
     } else if (keyPresses.ArrowLeft) {
         // positionX -= movementSpeed;
@@ -96,6 +100,15 @@ function gameLoop() {
 
     }
 
+    if (moveMinion <= -10) {
+        moveMinion = 150;
+        minionOne.style.left = moveMinion + '%';
+    }
+
+    if (moveMinionTwo <= -10) {
+        moveMinionTwo = 150;
+        minionOne.style.left = moveMinionTwo + '%';
+    }
 
     if (hasMoved) {
         frameCount++;
