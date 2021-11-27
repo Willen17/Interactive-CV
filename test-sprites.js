@@ -32,7 +32,13 @@ const minioneTwo = document.getElementById('img2');
 let moveMinion = 100;
 let moveMinionTwo = 150;
 const threshold = -10; 
-const startMinionValue = 150;
+
+const layer5 = document.getElementById('layer5');
+let moveLayer5 = 0;
+
+const layer5Two = document.getElementById('layer5-2');
+let moveLayer5Two = 100;
+
 
 
 
@@ -49,6 +55,10 @@ window.onload = main();
 function main() {
     loadImage();
 }
+
+window.addEventListener('resize', function() {
+    location.reload();
+})
 
 window.addEventListener('keydown', keyDownListener, false);
 function keyDownListener(event) {
@@ -80,9 +90,14 @@ function gameLoop() {
 
         moveMinion -= 0.3;
         moveMinionTwo -= 0.3;
+
+        moveLayer5 -= 0.5;
+        moveLayer5Two -= 0.5;
         
         minionOne.style.left = moveMinion + '%';
         minioneTwo.style.left = moveMinionTwo + '%';
+        layer5.style.left = moveLayer5 + '%'
+        layer5Two.style.left = moveLayer5Two + '%';
         
 
     } else if (keyPresses.ArrowLeft) {
@@ -100,15 +115,8 @@ function gameLoop() {
 
     }
 
-    if (moveMinion <= -10) {
-        moveMinion = 150;
-        minionOne.style.left = moveMinion + '%';
-    }
-
-    if (moveMinionTwo <= -10) {
-        moveMinionTwo = 150;
-        minionOne.style.left = moveMinionTwo + '%';
-    }
+   minionMovement();
+   moveBackground();
 
     if (hasMoved) {
         frameCount++;
@@ -127,4 +135,38 @@ function gameLoop() {
     
     drawFrame(cycleLoop[currentLoopIndex], currentDirection, positionX, positionY);
     window.requestAnimationFrame(gameLoop);   
+}
+
+function minionMovement() {
+    if (moveMinion <= -51) {
+        moveMinion = 150;
+        minionOne.style.left = moveMinion + '%';
+    }
+
+    if (moveMinionTwo <= -51) {
+        moveMinionTwo = 150;
+        minionOne.style.left = moveMinionTwo + '%';
+    }
+
+    if (moveMinion >= 151) {
+        moveMinion = -50;
+        minionOne.style.left = moveMinion + '%';
+    }
+
+    if (moveMinionTwo >= 151) {
+        moveMinionTwo = -50;
+        minionOne.style.left = moveMinionTwo + '%';
+    }
+}
+
+function moveBackground() {
+    if (moveLayer5 <= -100) {
+        moveLayer5 = 100;
+        layer5.style.left = moveLayer5 + '%';
+    }
+    if (moveLayer5Two <= -100) {
+        moveLayer5Two = 100;
+        layer5Two.style.left = moveLayer5Two + '%';
+    }
+
 }
