@@ -24,7 +24,7 @@ let currentDirection = facingRight; //Displays the current direction the charact
 let currentLoopIndex = 0; //Used together with cycleLoop, sets which frame to use in the sprite sheet.
 let frameCount = 0; // To keep track on what frame we are on.
 let positionX = canvasWidth/3;  // Sets the characters X axis.
-let positionY = canvasHeight - 300; // Sets the characters Y axis.
+let positionY = canvasHeight - 250; // Sets the characters Y axis.
 let img = new Image(); // Creates the image.
 
 const minionOne = document.getElementById('img1');
@@ -39,7 +39,29 @@ let moveLayer5 = 0;
 const layer5Two = document.getElementById('layer5-2');
 let moveLayer5Two = 100;
 
+const layer4 = document.getElementById('layer4');
+let moveLayer4 = 0;
 
+const layer4Two = document.getElementById('layer4-2');
+let moveLayer4Two = 100;
+
+const layer3 = document.getElementById('layer3');
+let moveLayer3 = 0;
+
+const layer3Two = document.getElementById('layer3-2');
+let moveLayer3Two = 100;
+
+const layer2 = document.getElementById('layer2');
+let moveLayer2 = 0;
+
+const layer2Two = document.getElementById('layer2-2');
+let moveLayer2Two = 100;
+
+const layer1 = document.getElementById('layer1');
+let moveLayer1 = 0;
+
+const layer1Two = document.getElementById('layer1-2');
+let moveLayer1Two = 100;
 
 
 function loadImage () {
@@ -93,11 +115,32 @@ function gameLoop() {
 
         moveLayer5 -= 0.5;
         moveLayer5Two -= 0.5;
+
+        moveLayer4 -= 0.4;
+        moveLayer4Two -= 0.4;
+
+        moveLayer3 -= 0.3;
+        moveLayer3Two -= 0.3;
+
+        moveLayer2 -= 0.2;
+        moveLayer2Two -= 0.2;
+
+        moveLayer1 -= 0.1;
+        moveLayer1Two -= 0.1;
         
         minionOne.style.left = moveMinion + '%';
         minioneTwo.style.left = moveMinionTwo + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
+        layer4.style.left = moveLayer4 + '%'
+        layer4Two.style.left = moveLayer4Two + '%';
+        layer3.style.left = moveLayer3 + '%'
+        layer3Two.style.left = moveLayer3Two + '%';
+        layer2.style.left = moveLayer2 + '%'
+        layer2Two.style.left = moveLayer2Two + '%';
+        layer1.style.left = moveLayer1 + '%'
+        layer1Two.style.left = moveLayer1Two + '%';
+
         
 
     } else if (keyPresses.ArrowLeft) {
@@ -113,15 +156,40 @@ function gameLoop() {
         moveLayer5 += 0.5;
         moveLayer5Two += 0.5;
 
+        moveLayer4 += 0.4;
+        moveLayer4Two += 0.4;
+
+        moveLayer3 += 0.3;
+        moveLayer3Two += 0.3;
+
+        moveLayer2 += 0.2;
+        moveLayer2Two += 0.2;
+
+        moveLayer1 += 0.1;
+        moveLayer1Two += 0.1;
+        
+
         minionOne.style.left = moveMinion + '%'
         minioneTwo.style.left = moveMinionTwo + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
+        layer4.style.left = moveLayer4 + '%'
+        layer4Two.style.left = moveLayer4Two + '%';
+        layer3.style.left = moveLayer3 + '%'
+        layer3Two.style.left = moveLayer3Two + '%';
+        layer2.style.left = moveLayer2 + '%'
+        layer2Two.style.left = moveLayer2Two + '%';
+        layer1.style.left = moveLayer1 + '%'
+        layer1Two.style.left = moveLayer1Two + '%';
 
     }
 
    minionMovement();
-   moveBackground();
+   moveBackground5();
+   moveBackground4();
+   moveBackground3();
+   moveBackground2();
+   moveBackground1();
 
     if (hasMoved) {
         frameCount++;
@@ -164,7 +232,7 @@ function minionMovement() {
     }
 }
 
-function moveBackground() {
+function moveBackground5() {
     if (moveLayer5 < -100) {
         moveLayer5 = 100;
         layer5.style.left = moveLayer5 + '%';
@@ -181,6 +249,80 @@ function moveBackground() {
         moveLayer5Two = -100;
         layer5Two.style.left = moveLayer5Two + '%';
     }
+}
 
+function moveBackground4() {
+    if (moveLayer4 < -100) {
+        moveLayer4 = 99;
+        layer4.style.left = moveLayer4 + '%';
+    }
+    if (moveLayer4Two < -100) {
+        moveLayer4Two = 99;
+        layer4Two.style.left = moveLayer4Two + '%';
+    }
+    if (moveLayer4 > 100) {
+        moveLayer4 = -99;
+        layer4.style.left = moveLayer4 + '%';
+    }
+    if (moveLayer4Two > 100) {
+        moveLayer4Two = -99;
+        layer4Two.style.left = moveLayer4Two + '%';
+    }
+}
 
+function moveBackground3() {
+    if (moveLayer3 < -100) {
+        moveLayer3 = 99;
+        layer3.style.left = moveLayer3 + '%';
+    }
+    if (moveLayer3Two < -100) {
+        moveLayer3Two = 99;
+        layer3Two.style.left = moveLayer3Two + '%';
+    }
+    if (moveLayer3 > 100) {
+        moveLayer3 = -99;
+        layer3.style.left = moveLayer3 + '%';
+    }
+    if (moveLayer3Two > 100) {
+        moveLayer3Two = -99;
+        layer3Two.style.left = moveLayer3Two + '%';
+    }
+}
+
+function moveBackground2() {
+    if (moveLayer2 < -100) {
+        moveLayer2 = 99;
+        layer2.style.left = moveLayer2 + '%';
+    }
+    if (moveLayer2Two < -100) {
+        moveLayer2Two = 99;
+        layer2Two.style.left = moveLayer2Two + '%';
+    }
+    if (moveLayer2 > 100) {
+        moveLayer2 = -99;
+        layer2.style.left = moveLayer2 + '%';
+    }
+    if (moveLayer2Two > 100) {
+        moveLayer2Two = -99;
+        layer2Two.style.left = moveLayer2Two + '%';
+    }
+}
+
+function moveBackground1() {
+    if (moveLayer1 < -100) {
+        moveLayer1 = 99;
+        layer1.style.left = moveLayer1 + '%';
+    }
+    if (moveLayer1Two < -100) {
+        moveLayer1Two = 99;
+        layer1Two.style.left = moveLayer1Two + '%';
+    }
+    if (moveLayer1 > 100) {
+        moveLayer1 = -99;
+        layer1.style.left = moveLayer1 + '%';
+    }
+    if (moveLayer1Two > 100) {
+        moveLayer1Two = -99;
+        layer1Two.style.left = moveLayer1Two + '%';
+    }
 }
