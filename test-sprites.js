@@ -110,8 +110,13 @@ function gameLoop() {
         moveMinion += 0.3;
         moveMinionTwo += 0.3;
 
+        moveLayer5 += 0.5;
+        moveLayer5Two += 0.5;
+
         minionOne.style.left = moveMinion + '%'
         minioneTwo.style.left = moveMinionTwo + '%';
+        layer5.style.left = moveLayer5 + '%'
+        layer5Two.style.left = moveLayer5Two + '%';
 
     }
 
@@ -160,13 +165,22 @@ function minionMovement() {
 }
 
 function moveBackground() {
-    if (moveLayer5 <= -100) {
+    if (moveLayer5 < -100) {
         moveLayer5 = 100;
         layer5.style.left = moveLayer5 + '%';
     }
-    if (moveLayer5Two <= -100) {
+    if (moveLayer5Two < -100) {
         moveLayer5Two = 100;
         layer5Two.style.left = moveLayer5Two + '%';
     }
+    if (moveLayer5 > 100) {
+        moveLayer5 = -100;
+        layer5.style.left = moveLayer5 + '%';
+    }
+    if (moveLayer5Two > 100) {
+        moveLayer5Two = -100;
+        layer5Two.style.left = moveLayer5Two + '%';
+    }
+
 
 }
