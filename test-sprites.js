@@ -64,7 +64,7 @@ let moveLayer1Two = 100;
 
 const arrowRightElement = document.getElementById('arrow-right-container');
 const arrowLeftElement = document.getElementById('arrow-left-container');
-
+let movingRight = false;
 
 function loadImage () {
     img.src = './assets/sprite-sheet.png';
@@ -83,6 +83,26 @@ function main() {
 window.addEventListener('resize', function() {
     location.reload();
 })
+
+arrowRightElement.addEventListener('mousedown', MouseDownRightArrowListener);
+function MouseDownRightArrowListener() {
+    keyPresses.ArrowRight = true;
+}
+
+arrowRightElement.addEventListener('mouseup', MouseUpRightArrowListener);
+function MouseUpRightArrowListener() {
+    keyPresses.ArrowRight = false;
+}
+
+arrowLeftElement.addEventListener('mousedown', MouseDownLeftArrowListener);
+function MouseDownLeftArrowListener() {
+    keyPresses.ArrowLeft = true;
+}
+
+arrowLeftElement.addEventListener('mouseup', MouseUpLeftArrowListener);
+function MouseUpLeftArrowListener() {
+    keyPresses.ArrowLeft = false;
+}
 
 window.addEventListener('keydown', keyDownListener, false);
 function keyDownListener(event) {
@@ -127,6 +147,8 @@ function gameLoop() {
 
         moveLayer1 -= 0.1;
         moveLayer1Two -= 0.1;
+
+        movingRight = false;
         
         aboutMeContainer.style.left = moveAboutMe + '%';
         portfolioContainer.style.left = movePortfolio + '%';
