@@ -15,7 +15,7 @@ body {margin: 0; overflow: hidden;}
     height: 100%;
 }
 
-main, div {
+main, #img-container {
     overflow: hidden;
     position:absolute;
     align-items: center;
@@ -25,7 +25,73 @@ main, div {
     height: 100%;
 }
 
+#arrow-right-container {
+    position: absolute;
+    z-index: 11;
+    bottom: 5%;
+    right: 5%;
+    padding: 1rem;
+    cursor: pointer;
+}
 
+#arrow-right{
+    width: calc(100vw / 8);
+    height: auto;
+}
+
+#arrow-left-container {
+    position: absolute;
+    z-index: 11;
+    bottom: 5%;
+    left: 5%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+#arrow-left{
+    width: calc(100vw / 8);
+    height: auto;
+    transform: rotate(180deg);
+}
+
+#text-container {
+    position: absolute;
+    text-align: center;
+    background-color: aqua;
+    height: calc(100vh - 60%);
+    width: calc(100vw - 70%);
+    padding: 1rem;
+    top: 10%;
+    left: 100%;
+    z-index: 10;
+    border-radius: 2rem;
+}
+
+#text-container2 {
+    position: absolute;
+    text-align: center;
+    background-color:cornflowerblue;
+    height: calc(100vh - 60%);
+    width: calc(100vw - 70%);
+    padding: 1rem;
+    top: 10%;
+    left: 150%;
+    z-index: 10;
+    border-radius: 2rem;
+
+}
+
+#pictureMe {
+    height: auto;
+    width: 7rem;
+    border-radius: 90%;
+}
+
+.flex {display: flex;}
+
+.justify-center {justify-content: center;}
+
+.justify-evenly {justify-content: space-evenly;}
 
 #img1 {
     position: absolute;

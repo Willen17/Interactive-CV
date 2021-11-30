@@ -27,11 +27,10 @@ let positionX = canvasWidth/3;  // Sets the characters X axis.
 let positionY = canvasHeight - 250; // Sets the characters Y axis.
 let img = new Image(); // Creates the image.
 
-const minionOne = document.getElementById('img1');
-const minioneTwo = document.getElementById('img2');
-let moveMinion = 100;
-let moveMinionTwo = 150;
-const threshold = -10; 
+const aboutMeContainer = document.getElementById('text-container');
+const portfolioContainer = document.getElementById('text-container2');
+let moveAboutMe = 100;
+let movePortfolio = 150;
 
 const layer5 = document.getElementById('layer5');
 let moveLayer5 = 0;
@@ -62,6 +61,9 @@ let moveLayer1 = 0;
 
 const layer1Two = document.getElementById('layer1-2');
 let moveLayer1Two = 100;
+
+const arrowRightElement = document.getElementById('arrow-right-container');
+const arrowLeftElement = document.getElementById('arrow-left-container');
 
 
 function loadImage () {
@@ -104,14 +106,12 @@ function gameLoop() {
     let hasMoved = false;
 
     if (keyPresses.ArrowRight) {
-        // positionX += movementSpeed;
-        // x-= gameSpeed;
-        // x2-= gameSpeed;
+        
         currentDirection = facingRight;
         hasMoved = true;
 
-        moveMinion -= 0.3;
-        moveMinionTwo -= 0.3;
+        moveAboutMe -= 0.3;
+        movePortfolio -= 0.3;
 
         moveLayer5 -= 0.5;
         moveLayer5Two -= 0.5;
@@ -128,8 +128,8 @@ function gameLoop() {
         moveLayer1 -= 0.1;
         moveLayer1Two -= 0.1;
         
-        minionOne.style.left = moveMinion + '%';
-        minioneTwo.style.left = moveMinionTwo + '%';
+        aboutMeContainer.style.left = moveAboutMe + '%';
+        portfolioContainer.style.left = movePortfolio + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -150,8 +150,8 @@ function gameLoop() {
         currentDirection = facingLeft;
         hasMoved = true;
 
-        moveMinion += 0.3;
-        moveMinionTwo += 0.3;
+        moveAboutMe += 0.3;
+        movePortfolio += 0.3;
 
         moveLayer5 += 0.5;
         moveLayer5Two += 0.5;
@@ -169,8 +169,8 @@ function gameLoop() {
         moveLayer1Two += 0.1;
         
 
-        minionOne.style.left = moveMinion + '%'
-        minioneTwo.style.left = moveMinionTwo + '%';
+        aboutMeContainer.style.left = moveAboutMe + '%'
+        portfolioContainer.style.left = movePortfolio + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -211,118 +211,106 @@ function gameLoop() {
 }
 
 function minionMovement() {
-    if (moveMinion <= -51) {
-        moveMinion = 150;
-        minionOne.style.left = moveMinion + '%';
+    if (moveAboutMe <= -51) {
+        moveAboutMe = 150;
     }
 
-    if (moveMinionTwo <= -51) {
-        moveMinionTwo = 150;
-        minionOne.style.left = moveMinionTwo + '%';
+    if (movePortfolio <= -51) {
+        movePortfolio = 150;
     }
 
-    if (moveMinion >= 151) {
-        moveMinion = -50;
-        minionOne.style.left = moveMinion + '%';
+    if (moveAboutMe >= 151) {
+        moveAboutMe = -50;
     }
 
-    if (moveMinionTwo >= 151) {
-        moveMinionTwo = -50;
-        minionOne.style.left = moveMinionTwo + '%';
+    if (movePortfolio >= 151) {
+        movePortfolio = -50;
     }
+    aboutMeContainer.style.left = moveAboutMe + '%';
+    portfolioContainer.style.left = movePortfolio + '%';
 }
 
 function moveBackground5() {
     if (moveLayer5 < -100) {
         moveLayer5 = 100;
-        layer5.style.left = moveLayer5 + '%';
     }
     if (moveLayer5Two < -100) {
         moveLayer5Two = 100;
-        layer5Two.style.left = moveLayer5Two + '%';
     }
     if (moveLayer5 > 100) {
         moveLayer5 = -100;
-        layer5.style.left = moveLayer5 + '%';
     }
     if (moveLayer5Two > 100) {
         moveLayer5Two = -100;
-        layer5Two.style.left = moveLayer5Two + '%';
     }
+    layer5Two.style.left = moveLayer5Two + '%';
+    layer5.style.left = moveLayer5 + '%';
 }
 
 function moveBackground4() {
     if (moveLayer4 < -100) {
         moveLayer4 = 99;
-        layer4.style.left = moveLayer4 + '%';
     }
     if (moveLayer4Two < -100) {
         moveLayer4Two = 99;
-        layer4Two.style.left = moveLayer4Two + '%';
     }
     if (moveLayer4 > 100) {
         moveLayer4 = -99;
-        layer4.style.left = moveLayer4 + '%';
     }
     if (moveLayer4Two > 100) {
         moveLayer4Two = -99;
-        layer4Two.style.left = moveLayer4Two + '%';
     }
+    layer4Two.style.left = moveLayer4Two + '%';
+    layer4.style.left = moveLayer4 + '%';
 }
 
 function moveBackground3() {
     if (moveLayer3 < -100) {
         moveLayer3 = 99;
-        layer3.style.left = moveLayer3 + '%';
     }
     if (moveLayer3Two < -100) {
         moveLayer3Two = 99;
-        layer3Two.style.left = moveLayer3Two + '%';
     }
     if (moveLayer3 > 100) {
         moveLayer3 = -99;
-        layer3.style.left = moveLayer3 + '%';
     }
     if (moveLayer3Two > 100) {
         moveLayer3Two = -99;
-        layer3Two.style.left = moveLayer3Two + '%';
     }
+    layer3.style.left = moveLayer3 + '%';
+    layer3Two.style.left = moveLayer3Two + '%';
 }
 
 function moveBackground2() {
     if (moveLayer2 < -100) {
         moveLayer2 = 99;
-        layer2.style.left = moveLayer2 + '%';
     }
     if (moveLayer2Two < -100) {
         moveLayer2Two = 99;
-        layer2Two.style.left = moveLayer2Two + '%';
     }
     if (moveLayer2 > 100) {
         moveLayer2 = -99;
-        layer2.style.left = moveLayer2 + '%';
     }
     if (moveLayer2Two > 100) {
         moveLayer2Two = -99;
-        layer2Two.style.left = moveLayer2Two + '%';
     }
+    layer2.style.left = moveLayer2 + '%';
+    layer2Two.style.left = moveLayer2Two + '%';
 }
 
 function moveBackground1() {
     if (moveLayer1 < -100) {
         moveLayer1 = 99;
-        layer1.style.left = moveLayer1 + '%';
     }
     if (moveLayer1Two < -100) {
         moveLayer1Two = 99;
-        layer1Two.style.left = moveLayer1Two + '%';
     }
     if (moveLayer1 > 100) {
         moveLayer1 = -99;
-        layer1.style.left = moveLayer1 + '%';
     }
     if (moveLayer1Two > 100) {
         moveLayer1Two = -99;
-        layer1Two.style.left = moveLayer1Two + '%';
     }
+    layer1.style.left = moveLayer1 + '%';
+    layer1Two.style.left = moveLayer1Two + '%';
 }
