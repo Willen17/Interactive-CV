@@ -62,9 +62,12 @@ let moveLayer1 = 0;
 const layer1Two = document.getElementById('layer1-2');
 let moveLayer1Two = 100;
 
+const myCharacterContainer = document.getElementById('myCharacterContainer')
+
 const arrowRightElement = document.getElementById('arrow-right-container');
 const arrowLeftElement = document.getElementById('arrow-left-container');
 let movingRight = false;
+
 
 function loadImage () {
     img.src = './assets/sprite-sheet.png';
@@ -83,6 +86,14 @@ function main() {
 window.addEventListener('resize', function() {
     location.reload();
 })
+
+document.getElementById('myCharacter').addEventListener('click', startGame);
+function startGame() {
+    document.getElementById('speechBubbleText').innerText = 'To steer your character, use the arrow-keys on your keyboard. If you are using a phone, press the arrows.';
+    document.getElementById('myCharacter').style.cursor = 'unset';
+    document.getElementById('myCharacter').style.zIndex = 11;
+    canvas.style.display = 'unset';
+}
 
 arrowRightElement.addEventListener('mousedown', MouseDownRightArrowListener);
 function MouseDownRightArrowListener() {
