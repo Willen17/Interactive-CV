@@ -120,7 +120,7 @@ main, #img-container {
     width: 2000px;
     top: 5%;
     left: 100;
-    z-index: 10;  
+    z-index: 14;  
 }
 #text-container2 {
     position: absolute;
@@ -190,6 +190,42 @@ main, #img-container {
 .percent5 {position: absolute; width: 75%; background-color: #03d827; height: 100%;}
 .percent6 {position: absolute; width: 85%; background-color: #01e427; height: 100%;}
 
+#text-container-three {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
+    height: 16rem;
+    width: max-content;
+    padding: 1rem;
+    z-index: 13;
+    border-radius: 2rem;
+}
+
+.links {
+    text-align: left;
+    background-image: url(./assets/note2.png);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    background-position-y: -10px;
+    background-position-x: 0px;
+    margin-top: -30px;
+}
+
+.githubClick {
+    z-index: 14;
+} 
+
+.inner-content i {
+    font-size: 2rem;
+    margin: 0.1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    margin-left: 4.5rem;
+    color: rgb(66, 50, 50);
+    transform: rotate(-1deg);
+}
 .inner-content {
     display: inline-block;
     justify-content: center;
@@ -210,6 +246,7 @@ main, #img-container {
     transform: rotate(-1deg);
     font-family: catcafe;
 }
+
 
 .text-aboutme {
     text-align: left;
@@ -246,7 +283,7 @@ main, #img-container {
 
 .sign-holder3 {
     position: absolute;
-    top: -20%;
+    top: -30%;
     left: 20%;
     background-color: #7b5339;
     height: 5rem;
@@ -257,7 +294,7 @@ main, #img-container {
 
 .sign-holder4 {
     position: absolute;
-    top: -20%;
+    top: -30%;
     right: 20%;
     background-color: #7b5339;
     height: 5rem;
@@ -273,7 +310,8 @@ main, #img-container {
 .justify-center {justify-content: center;}
 .align-center {align-items: center;}
 .justify-start {justify-content: left;}
-
+.relative {position: relative;}
+.absolute {position: absolute;}
 .justify-evenly {justify-content: space-evenly;}
 
 #img1 {
