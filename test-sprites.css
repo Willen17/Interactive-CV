@@ -196,6 +196,19 @@ main, #img-container {
     background-image: url(./assets/wooden-sign-background.png);
     background-size: 100%;
     border: 3px solid #7b5339 ;
+    height: 20rem;
+    width: max-content;
+    padding: 1rem;
+    z-index: 13;
+    border-radius: 2rem; 
+}
+
+#text-container-four {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
     height: 16rem;
     width: max-content;
     padding: 1rem;
@@ -283,7 +296,7 @@ main, #img-container {
 
 .sign-holder3 {
     position: absolute;
-    top: -30%;
+    top: -25%;
     left: 20%;
     background-color: #7b5339;
     height: 5rem;
@@ -293,6 +306,28 @@ main, #img-container {
 }
 
 .sign-holder4 {
+    position: absolute;
+    top: -25%;
+    right: 20%;
+    background-color: #7b5339;
+    height: 5rem;
+    width: 1rem;
+    border: 3px solid #7b5339;
+    border-bottom: 0;
+}
+
+.sign-holder5 {
+    position: absolute;
+    top: -30%;
+    left: 20%;
+    background-color: #7b5339;
+    height: 5rem;
+    width: 1rem;
+    border: 3px solid #7b5339;
+    border-bottom: 0;
+}
+
+.sign-holder6 {
     position: absolute;
     top: -30%;
     right: 20%;
