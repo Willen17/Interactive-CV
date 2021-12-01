@@ -63,6 +63,7 @@ const layer1Two = document.getElementById('layer1-2');
 let moveLayer1Two = 100;
 
 const myCharacterContainer = document.getElementById('myCharacterContainer')
+let moveMyCharacterContainer = 70;
 
 const arrowRightElement = document.getElementById('arrow-right-container');
 const arrowLeftElement = document.getElementById('arrow-left-container');
@@ -91,7 +92,9 @@ document.getElementById('myCharacter').addEventListener('click', startGame);
 function startGame() {
     document.getElementById('speechBubbleText').innerText = 'To steer your character, use the arrow-keys on your keyboard. If you are using a phone, press the arrows.';
     document.getElementById('myCharacter').style.cursor = 'unset';
-    document.getElementById('myCharacter').style.zIndex = 11;
+    myCharacterContainer.style.zIndex = '11';
+
+
     canvas.style.display = 'unset';
 }
 
@@ -159,6 +162,8 @@ function gameLoop() {
         moveLayer1 -= 0.1;
         moveLayer1Two -= 0.1;
 
+        moveMyCharacterContainer -= 0.4;
+
         movingRight = false;
         
         aboutMeContainer.style.left = moveAboutMe + '%';
@@ -173,6 +178,7 @@ function gameLoop() {
         layer2Two.style.left = moveLayer2Two + '%';
         layer1.style.left = moveLayer1 + '%'
         layer1Two.style.left = moveLayer1Two + '%';
+        myCharacterContainer.style.left = moveMyCharacterContainer + '%';
 
         
 
@@ -200,6 +206,8 @@ function gameLoop() {
 
         moveLayer1 += 0.1;
         moveLayer1Two += 0.1;
+
+        moveMyCharacterContainer += 0.4;
         
 
         aboutMeContainer.style.left = moveAboutMe + '%'
@@ -214,15 +222,17 @@ function gameLoop() {
         layer2Two.style.left = moveLayer2Two + '%';
         layer1.style.left = moveLayer1 + '%'
         layer1Two.style.left = moveLayer1Two + '%';
+        myCharacterContainer.style.left = moveMyCharacterContainer + '%';
 
     }
 
-   minionMovement();
+   aboutMeMovement();
    moveBackground5();
    moveBackground4();
    moveBackground3();
    moveBackground2();
    moveBackground1();
+   myCharacterMovement();
 
     if (hasMoved) {
         frameCount++;
@@ -243,7 +253,7 @@ function gameLoop() {
     window.requestAnimationFrame(gameLoop);   
 }
 
-function minionMovement() {
+function aboutMeMovement() {
     if (moveAboutMe <= -51) {
         moveAboutMe = 150;
     }
@@ -346,4 +356,14 @@ function moveBackground1() {
     }
     layer1.style.left = moveLayer1 + '%';
     layer1Two.style.left = moveLayer1Two + '%';
+}
+
+function myCharacterMovement() {
+    if (moveMyCharacterContainer < -181) {
+        moveMyCharacterContainer = 180;
+    }
+    if (moveMyCharacterContainer > 181) {
+        moveMyCharacterContainer = -180;
+    }
+    myCharacterContainer.style.left = moveMyCharacterContainer + '%';
 }
