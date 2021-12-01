@@ -18,7 +18,6 @@ const frameLimit = 9;
 //Movement speed sets how many pixels the character will move per click.
 const movementSpeed = 3;
 
-
 let keyPresses = {}; //Tracks what key the user presses, empty by default.
 let currentDirection = facingRight; //Displays the current direction the character is facing, by default right.
 let currentLoopIndex = 0; //Used together with cycleLoop, sets which frame to use in the sprite sheet.
@@ -30,7 +29,7 @@ let img = new Image(); // Creates the image.
 const aboutMeContainer = document.getElementById('text-container');
 const portfolioContainer = document.getElementById('text-container2');
 let moveAboutMe = 100;
-let movePortfolio = 150;
+
 
 const layer5 = document.getElementById('layer5');
 let moveLayer5 = 0;
@@ -211,7 +210,6 @@ function gameLoop() {
         
 
         aboutMeContainer.style.left = moveAboutMe + '%'
-        // portfolioContainer.style.left = movePortfolio + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -254,23 +252,16 @@ function gameLoop() {
 }
 
 function aboutMeMovement() {
-    if (moveAboutMe <= -111) {
-        moveAboutMe = 110;
+    if (moveAboutMe <= -161) {
+        moveAboutMe = 160;
     }
 
-    // if (movePortfolio <= -151) {
-    //     movePortfolio = 150;
-    // }
-
-    if (moveAboutMe >= 111) {
-        moveAboutMe = -110;
+    if (moveAboutMe >= 161) {
+        moveAboutMe = -160;
     }
 
-    // if (movePortfolio >= 151) {
-    //     movePortfolio = -150;
-    // }
     aboutMeContainer.style.left = moveAboutMe + '%';
-    // portfolioContainer.style.left = movePortfolio + '%';
+    
 }
 
 function moveBackground5() {
