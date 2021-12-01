@@ -30,7 +30,7 @@ let img = new Image(); // Creates the image.
 const aboutMeContainer = document.getElementById('text-container');
 const portfolioContainer = document.getElementById('text-container2');
 let moveAboutMe = 100;
-let movePortfolio = 240;
+let movePortfolio = 150;
 
 const layer5 = document.getElementById('layer5');
 let moveLayer5 = 0;
@@ -145,7 +145,7 @@ function gameLoop() {
         hasMoved = true;
 
         moveAboutMe -= 0.3;
-        movePortfolio -= 0.3;
+        // movePortfolio -= 0.3;
 
         moveLayer5 -= 0.5;
         moveLayer5Two -= 0.5;
@@ -167,7 +167,7 @@ function gameLoop() {
         movingRight = false;
         
         aboutMeContainer.style.left = moveAboutMe + '%';
-        portfolioContainer.style.left = movePortfolio + '%';
+        // portfolioContainer.style.left = movePortfolio + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -190,7 +190,7 @@ function gameLoop() {
         hasMoved = true;
 
         moveAboutMe += 0.3;
-        movePortfolio += 0.3;
+        // movePortfolio += 0.3;
 
         moveLayer5 += 0.5;
         moveLayer5Two += 0.5;
@@ -211,7 +211,7 @@ function gameLoop() {
         
 
         aboutMeContainer.style.left = moveAboutMe + '%'
-        portfolioContainer.style.left = movePortfolio + '%';
+        // portfolioContainer.style.left = movePortfolio + '%';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -258,19 +258,19 @@ function aboutMeMovement() {
         moveAboutMe = 110;
     }
 
-    if (movePortfolio <= -241) {
-        movePortfolio = 240;
-    }
+    // if (movePortfolio <= -151) {
+    //     movePortfolio = 150;
+    // }
 
     if (moveAboutMe >= 111) {
         moveAboutMe = -110;
     }
 
-    if (movePortfolio >= 241) {
-        movePortfolio = -240;
-    }
+    // if (movePortfolio >= 151) {
+    //     movePortfolio = -150;
+    // }
     aboutMeContainer.style.left = moveAboutMe + '%';
-    portfolioContainer.style.left = movePortfolio + '%';
+    // portfolioContainer.style.left = movePortfolio + '%';
 }
 
 function moveBackground5() {

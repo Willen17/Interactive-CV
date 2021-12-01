@@ -115,17 +115,12 @@ main, #img-container {
 
 #text-container {
     position: absolute;
-    text-align: center;
-    background-image: url(./assets/wooden-sign-background.png);
-    background-size: 100%;
-    border: 3px solid #7b5339 ;
-    height: auto;
-    width: max-content;
-    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 2000px;
     top: 5%;
-    left: 100%;
-    z-index: 10;
-    border-radius: 2rem;    
+    left: 100;
+    z-index: 10;  
 }
 #text-container2 {
     position: absolute;
@@ -137,10 +132,37 @@ main, #img-container {
     width: max-content;
     padding: 1rem;
     top: 5%;
-    left: 240%;
+    left: 150%;
     z-index: 10;
     border-radius: 2rem;
 
+}
+
+#text-container-one {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
+    height: auto;
+    width: max-content;
+    padding: 1rem;
+    top: 5%;
+    z-index: 10;
+    border-radius: 2rem;    
+}
+
+#text-container-two {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
+    height: auto;
+    width: max-content;
+    padding: 1rem;
+    z-index: 10;
+    border-radius: 2rem;
 }
 
 .skillset {
@@ -202,8 +224,8 @@ main, #img-container {
 
 .sign-holder {
     position: absolute;
-    top: -22%;
-    left: 15%;
+    top: -20%;
+    left: 20%;
     background-color: #7b5339;
     height: 5rem;
     width: 1rem;
@@ -213,14 +235,37 @@ main, #img-container {
 
 .sign-holder2 {
     position: absolute;
-    top: -22%;
-    right: 15%;
+    top: -20%;
+    right: 20%;
     background-color: #7b5339;
     height: 5rem;
     width: 1rem;
     border: 3px solid #7b5339;
     border-bottom: 0;
 }
+
+.sign-holder3 {
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    background-color: #7b5339;
+    height: 5rem;
+    width: 1rem;
+    border: 3px solid #7b5339;
+    border-bottom: 0;
+}
+
+.sign-holder4 {
+    position: absolute;
+    top: -20%;
+    right: 20%;
+    background-color: #7b5339;
+    height: 5rem;
+    width: 1rem;
+    border: 3px solid #7b5339;
+    border-bottom: 0;
+}
+
 
 
 .flex {display: flex;}
@@ -332,8 +377,8 @@ main, #img-container {
 }
 
 @media (max-width: 700px) {
-    #text-container {
-        width: 110vw;
+    #text-container-one {
+        width: 120vw;
     }
     .inner-content p {
         font-size: 0.8rem;
