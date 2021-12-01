@@ -30,7 +30,7 @@ let img = new Image(); // Creates the image.
 const aboutMeContainer = document.getElementById('text-container');
 const portfolioContainer = document.getElementById('text-container2');
 let moveAboutMe = 100;
-let movePortfolio = 150;
+let movePortfolio = 240;
 
 const layer5 = document.getElementById('layer5');
 let moveLayer5 = 0;
@@ -254,20 +254,20 @@ function gameLoop() {
 }
 
 function aboutMeMovement() {
-    if (moveAboutMe <= -51) {
-        moveAboutMe = 150;
+    if (moveAboutMe <= -111) {
+        moveAboutMe = 110;
     }
 
-    if (movePortfolio <= -51) {
-        movePortfolio = 150;
+    if (movePortfolio <= -241) {
+        movePortfolio = 240;
     }
 
-    if (moveAboutMe >= 151) {
-        moveAboutMe = -50;
+    if (moveAboutMe >= 111) {
+        moveAboutMe = -110;
     }
 
-    if (movePortfolio >= 151) {
-        movePortfolio = -50;
+    if (movePortfolio >= 241) {
+        movePortfolio = -240;
     }
     aboutMeContainer.style.left = moveAboutMe + '%';
     portfolioContainer.style.left = movePortfolio + '%';

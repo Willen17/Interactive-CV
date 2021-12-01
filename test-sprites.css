@@ -127,12 +127,51 @@ main, #img-container {
     z-index: 10;
     border-radius: 2rem;    
 }
+#text-container2 {
+    position: absolute;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
+    height: auto;
+    width: max-content;
+    padding: 1rem;
+    top: 5%;
+    left: 240%;
+    z-index: 10;
+    border-radius: 2rem;
+
+}
+
+.skillset {
+    text-align: left;
+    background-image: url(./assets/note2.png);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    background-position-y: -30px;
+    background-position-x: 0px;
+    margin-top: -30px;
+}
+
+.percent {
+    position: relative;
+    width: 60%;
+    height: 10px;
+    background: #bababa;
+    margin-left: 2.5rem;
+}
+
+.percent1 {position: absolute; width: 90%; background-color: #01f529; height: 100%;}
+.percent2 {position: absolute; width: 80%; background-color: #03e629; height: 100%;}
+.percent3 {position: absolute; width: 70%; background-color: #03c723; height: 100%;}
+.percent4 {position: absolute; width: 90%; background-color: #01f529; height: 100%;}
+.percent5 {position: absolute; width: 75%; background-color: #03d827; height: 100%;}
+.percent6 {position: absolute; width: 85%; background-color: #01e427; height: 100%;}
 
 .inner-content {
     display: inline-block;
     justify-content: center;
     font-family: candy-beans;
-    color: rgb(255, 245, 231);
 }
 .inner-content h2 {
    color: #7b5339;
@@ -160,19 +199,6 @@ main, #img-container {
     margin-top: -30px;
 }
 
-#text-container2 {
-    position: absolute;
-    text-align: center;
-    background-color:cornflowerblue;
-    height: auto;
-    width: calc(100vw - 60%);
-    padding: 1rem;
-    top: 10%;
-    left: 150%;
-    z-index: 10;
-    border-radius: 2rem;
-
-}
 
 .sign-holder {
     position: absolute;
@@ -303,4 +329,18 @@ main, #img-container {
     #arrow-right-container, #arrow-left-container  {
         display: unset;
     }
+}
+
+@media (max-width: 700px) {
+    #text-container {
+        width: 110vw;
+    }
+    .inner-content p {
+        font-size: 0.8rem;
+    }
+
+    .text-aboutme:last-child {
+        padding-bottom: 1rem;
+    }
+    
 }
