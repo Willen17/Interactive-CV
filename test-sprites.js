@@ -98,23 +98,23 @@ function startGame() {
     canvas.style.display = 'unset';
 }
 
-arrowRightElement.addEventListener('mousedown', MouseDownRightArrowListener);
-function MouseDownRightArrowListener() {
+arrowRightElement.addEventListener('pointerdown', pointerDownRightArrowListener);
+function pointerDownRightArrowListener() {
     keyPresses.ArrowRight = true;
 }
 
-arrowRightElement.addEventListener('mouseup', MouseUpRightArrowListener);
-function MouseUpRightArrowListener() {
+arrowRightElement.addEventListener('pointerup', pointerUpRightArrowListener);
+function pointerUpRightArrowListener() {
     keyPresses.ArrowRight = false;
 }
 
-arrowLeftElement.addEventListener('mousedown', MouseDownLeftArrowListener);
-function MouseDownLeftArrowListener() {
+arrowLeftElement.addEventListener('pointerdown', pointerDownLeftArrowListener);
+function pointerDownLeftArrowListener() {
     keyPresses.ArrowLeft = true;
 }
 
-arrowLeftElement.addEventListener('mouseup', MouseUpLeftArrowListener);
-function MouseUpLeftArrowListener() {
+arrowLeftElement.addEventListener('pointerup', pointerUpLeftArrowListener);
+function pointerUpLeftArrowListener() {
     keyPresses.ArrowLeft = false;
 }
 
