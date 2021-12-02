@@ -99,7 +99,8 @@ function startGame() {
 }
 
 arrowRightElement.addEventListener('pointerdown', pointerDownRightArrowListener);
-function pointerDownRightArrowListener() {
+function pointerDownRightArrowListener(event) {
+    event.preventDefault();
     keyPresses.ArrowRight = true;
 }
 
@@ -109,7 +110,8 @@ function pointerUpRightArrowListener() {
 }
 
 arrowLeftElement.addEventListener('pointerdown', pointerDownLeftArrowListener);
-function pointerDownLeftArrowListener() {
+function pointerDownLeftArrowListener(event) {
+    event.preventDefault();
     keyPresses.ArrowLeft = true;
 }
 
