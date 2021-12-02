@@ -98,18 +98,19 @@ function startGame() {
     canvas.style.display = 'unset';
 }
 
-arrowRightElement.addEventListener('pointerdown', pointerDownRightArrowListener);
+arrowRightElement.addEventListener('touchstart', pointerDownRightArrowListener);
 function pointerDownRightArrowListener(event) {
     event.preventDefault();
     keyPresses.ArrowRight = true;
 }
+
 
 arrowRightElement.addEventListener('pointerup', pointerUpRightArrowListener);
 function pointerUpRightArrowListener() {
     keyPresses.ArrowRight = false;
 }
 
-arrowLeftElement.addEventListener('pointerdown', pointerDownLeftArrowListener);
+arrowLeftElement.addEventListener('touchstart', pointerDownLeftArrowListener);
 function pointerDownLeftArrowListener(event) {
     event.preventDefault();
     keyPresses.ArrowLeft = true;
