@@ -21,7 +21,8 @@ body {margin: 0; overflow: hidden;}
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 12;
+    z-index: 15;
+    pointer-events: none;
 } 
 
 main, #img-container {
@@ -117,9 +118,19 @@ main, #img-container {
     position: absolute;
     display: flex;
     justify-content: space-evenly;
-    width: 2500px;
+    width: 3000px;
     top: 5%;
-    left: 100;
+    left: 95;
+    z-index: 14;  
+}
+
+#text-container2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 3000px;
+    top: 5%;
+    left: -185;
     z-index: 14;  
 }
 
@@ -187,6 +198,18 @@ main, #img-container {
 }
 
 #text-container-four {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339 ;
+    height: 16rem;
+    width: max-content;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+#text-container-five {
     position: relative;
     text-align: center;
     background-image: url(./assets/wooden-sign-background.png);
@@ -433,7 +456,7 @@ main, #img-container {
 
 @media (max-width: 700px) {
     #text-container-one {
-        width: 120vw;
+        width: 120vw;   
     }
     .inner-content p {
         font-size: 0.8rem;

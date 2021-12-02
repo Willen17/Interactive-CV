@@ -27,8 +27,9 @@ let positionY = canvasHeight - 250; // Sets the characters Y axis.
 let img = new Image(); // Creates the image.
 
 const aboutMeContainer = document.getElementById('text-container');
-const portfolioContainer = document.getElementById('text-container2');
-let moveAboutMe = 100;
+const aboutMeContainer2 = document.getElementById('text-container2');
+let moveAboutMe = 95;
+let moveAboutMe2 = -185;
 
 
 const layer5 = document.getElementById('layer5');
@@ -144,7 +145,7 @@ function gameLoop() {
         hasMoved = true;
 
         moveAboutMe -= 0.3;
-        // movePortfolio -= 0.3;
+        moveAboutMe2 -= 0.3;
 
         moveLayer5 -= 0.5;
         moveLayer5Two -= 0.5;
@@ -165,8 +166,8 @@ function gameLoop() {
 
         movingRight = false;
         
-        aboutMeContainer.style.left = moveAboutMe + '%';
-        // portfolioContainer.style.left = movePortfolio + '%';
+        aboutMeContainer.style.left = moveAboutMe + 'rem';
+        aboutMeContainer2.style.left = moveAboutMe2 + 'rem';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -189,7 +190,7 @@ function gameLoop() {
         hasMoved = true;
 
         moveAboutMe += 0.3;
-        // movePortfolio += 0.3;
+        moveAboutMe2 += 0.3;
 
         moveLayer5 += 0.5;
         moveLayer5Two += 0.5;
@@ -209,7 +210,8 @@ function gameLoop() {
         moveMyCharacterContainer += 0.4;
         
 
-        aboutMeContainer.style.left = moveAboutMe + '%'
+        aboutMeContainer.style.left = moveAboutMe + 'rem'
+        aboutMeContainer2.style.left = moveAboutMe2 + 'rem';
         layer5.style.left = moveLayer5 + '%'
         layer5Two.style.left = moveLayer5Two + '%';
         layer4.style.left = moveLayer4 + '%'
@@ -252,15 +254,24 @@ function gameLoop() {
 }
 
 function aboutMeMovement() {
-    if (moveAboutMe <= -161) {
-        moveAboutMe = 160;
+    if (moveAboutMe <= -271) {
+        moveAboutMe = 270;
     }
 
-    if (moveAboutMe >= 161) {
-        moveAboutMe = -160;
+    if (moveAboutMe >= 271) {
+        moveAboutMe = -270;
     }
 
-    aboutMeContainer.style.left = moveAboutMe + '%';
+    if (moveAboutMe2 <= -271) {
+        moveAboutMe2 = 270;
+    }
+
+    if (moveAboutMe2 >= 271) {
+        moveAboutMe2 = -270;
+    }
+
+    aboutMeContainer.style.left = moveAboutMe + 'rem';
+    aboutMeContainer2.style.left = moveAboutMe2 + 'rem';
     
 }
 
