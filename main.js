@@ -92,9 +92,6 @@ document.getElementById('myCharacter').addEventListener('click', startGame);
 function startGame() {
     document.getElementById('speechBubbleText').innerText = 'To steer your character, use the arrow-keys on your keyboard. If you are using a phone, press the arrows.';
     document.getElementById('myCharacter').style.cursor = 'unset';
-    myCharacterContainer.style.zIndex = '11';
-
-
     canvas.style.display = 'unset';
 }
 
