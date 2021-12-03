@@ -1,25 +1,114 @@
-/* Element specific classes */
 * {box-sizing: border-box;}
 
-body {
-    margin: 0;
-    background-color: aqua;
-    height: 100%;
-    width: 100%;    
-}
+body {margin: 0; overflow: hidden;}
 
-#ball {
-    background-color:coral;
-    width: 10vh;
-    height: 10vh;
-    top: 75%;
-    left: 0%;
-    border-radius: 50%;
-}
-
-#bottom {
-    background-color: burlywood;
-    height: 15%;
-    width: 100%;
+main, #img-container {
+    overflow: hidden;
     bottom: 0;
+    left: 0;
+}
+
+.skillset {
+    background-position-y: -30px;
+    background-position-x: 0px;
+    background-size: 100% 120%;
+}
+
+.links {
+    background-position-y: -10px;
+    background-position-x: 0px;
+    background-size: 100% 120%;
+}
+
+.text-aboutme {
+    background-position-y: -28px;
+    background-position-x: -28px;
+    background-size: 110% 120%;
+}
+
+.percent {
+    position: relative;
+    width: 60%;
+    height: 10px;
+    background: #bababa;
+    margin-left: 2.5rem;
+}
+
+.percent1 {width: 90%; background-color: #01f529; height: 100%;}
+.percent2 {width: 80%; background-color: #03e629; height: 100%;}
+.percent3 {width: 70%; background-color: #03c723; height: 100%;}
+.percent4 {width: 90%; background-color: #01f529; height: 100%;}
+.percent5 {width: 75%; background-color: #03d827; height: 100%;}
+.percent6 {width: 85%; background-color: #01e427; height: 100%;}
+
+.inner-content i {
+    font-size: 2rem;
+    margin: 0.1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    margin-left: 4.5rem;
+    color: rgb(66, 50, 50);
+    transform: rotate(-1deg);
+}
+
+.inner-content {
+    display: inline-block;
+    justify-content: center;
+    font-family: candy-beans;
+}
+
+.inner-content h2 {
+   color: #7b5339;
+}
+
+.inner-content p {
+    font-size: 1.2rem;
+    margin: 0.1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    margin-left: 4.5rem;
+    margin-right: 3rem;
+    color: rgb(66, 50, 50);
+    transform: rotate(-1deg);
+    font-family: catcafe;
+}
+
+.sign-holder {
+    top: -20%;
+    left: 20%;
+}
+
+.sign-holder2 {
+    top: -20%;
+    right: 20%;
+}
+
+.sign-holder3 {
+    top: -25%;
+    left: 20%;
+}
+
+.sign-holder4 {
+    top: -25%;
+    right: 20%;
+}
+
+.sign-holder5 {
+    top: -30%;
+    left: 20%;
+}
+
+.sign-holder6 {
+    top: -30%;
+    right: 20%;
+}
+
+@media (max-width: 700px) {
+    .inner-content p {
+        font-size: 0.8rem;
+    }
+
+    .text-aboutme:last-child {
+        padding-bottom: 1rem;
+    }
 }

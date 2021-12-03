@@ -1,0 +1,120 @@
+#canvas1 {
+    display: none;
+    z-index: 15;
+    pointer-events: none;
+} 
+
+
+#arrow-right-container {
+    z-index: 13;
+    bottom: 5%;
+    right: 5%;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+#arrow-right{
+    width: calc(100vw / 8);
+}
+
+#arrow-left-container {
+    z-index: 13;
+    bottom: 5%;
+    left: 5%;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+#arrow-left{
+    width: calc(100vw / 8);
+    transform: rotate(180deg);
+}
+
+#myCharacterContainer {
+    bottom: 10%;
+    left: 70%;
+    z-index: 11;
+    height: calc(100vh / 3);
+}
+
+#myCharacter{
+    -webkit-transform: scaleX(-1);
+     transform: scaleX(-1);
+     cursor: pointer;
+}
+
+
+#speechBubbleContainer {
+    width: 200%;
+    left: -200%;
+    top: -35%;
+    
+}
+
+#speechBubble {
+    background-image: url(./assets/speech-bubble2.png);
+    transform: scaleX(-1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+}
+
+#speechBubbleText {
+    font-family: pixelfont;
+    top: 0%;
+    left: 5%;
+    width: 65%;
+    transform: scaleX(-1);
+}
+
+#text-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 3000px;
+    top: 5%;
+    left: 95;
+    z-index: 14;  
+}
+
+#text-container2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 3000px;
+    top: 5%;
+    left: -185;
+    z-index: 14;  
+}
+
+#text-container-one {
+    width: max-content;
+    top: 5%;  
+}
+
+#text-container-three {
+    height: 20rem;
+}
+
+#text-container-four {
+    height: 16rem;
+}
+
+#text-container-five {
+    height: 16rem;
+}
+
+@media (max-width: 1024px)  {
+    #arrow-right-container, #arrow-left-container  {
+        display: unset;
+    }
+}
+
+@media (max-width: 700px) {
+    #text-container-one {
+        width: 120vw;   
+    }
+}

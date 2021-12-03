@@ -1,13 +1,40 @@
 /* Reusable classes */
 
 .flex {display: flex;}
-
-.column {flex-direction: column;}
-
-.justify-center {justify-content: center;}
+.absolute {position: absolute;}
+.relative {position: relative;}
 
 .align-center {align-items: center;}
 
-.absolute {position: absolute;}
+.w100 {width: 100%;}
+.h100 {height: 100%;}
+.hAuto {height: auto;}
+.wAuto {width: auto;}
+.wMaxContent {width: max-content;}
+.textCenter {text-align: center;}
 
-.relative {position: relative;}
+.signsBackground {
+    position: relative;
+    text-align: center;
+    background-image: url(./assets/wooden-sign-background.png);
+    background-size: 100%;
+    border: 3px solid #7b5339;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.noteOnSign {
+    text-align: left;
+    background-image: url(./assets/note2.png);
+    background-repeat: no-repeat;
+    margin-top: -30px;
+}
+
+.signHolderStyle {
+    position: absolute;
+    background-color: #7b5339;
+    height: 5rem;
+    width: 1rem;
+    border: 3px solid #7b5339;
+    border-bottom: 0;
+}

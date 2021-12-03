@@ -1,0 +1,16 @@
+/* Fonts */
+
+@font-face {
+    font-family: pixelfont;
+    src: url(./assets/pixelfont.ttf);
+}
+
+@font-face {
+    font-family: candy-beans;
+    src: url(./assets/Candy\ Beans.otf);
+}
+
+@font-face {
+    font-family: catcafe;
+    src: url(./assets/CatCafe.ttf);
+}
